@@ -1,0 +1,2 @@
+module AttendantsBackoffice::WelcomeHelper
+end

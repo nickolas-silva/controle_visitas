@@ -1,0 +1,2 @@
+module EmployeesBackoffice::WelcomeHelper
+end

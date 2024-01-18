@@ -1,0 +1,28 @@
+en:
+  activerecord:
+    models:
+      admin:
+        one: Administrador
+        other: Administradores
+      employee:
+        one: Funcionario
+        other: Funcionarios
+      attendant:
+        one: Atendente
+        other: Atendentes
+    attributes:
+      admin:
+        id: Codigo
+        email: Email
+        created_at: Criado em
+        updated_at: Atualizado em
+      employee:
+        id: Codigo
+        email: Email
+        created_at: Criado em
+        updated_at: Atualizado em
+      attendant:
+        id: Codigo
+        email: Email
+        created_at: Criado em
+        updated_at: Atualizado em
