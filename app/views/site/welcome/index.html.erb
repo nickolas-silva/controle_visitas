@@ -1,8 +1,22 @@
-<h1>Site::Welcome#index</h1>
-<p>Find me in app/views/site/welcome/index.html.erb</p>
+<div id="site">
+<%= image_tag('logo.png')%>
+<h1>Bem-Vindo</h1>
+
+<p>
+<%= link_to 'Logar Administrador', admins_backoffice_welcome_index_path%>
+</p>
+
+<p>
+<%= link_to 'Logar Funcionário', employees_backoffice_welcome_index_path%>
+</p>
+
+<p>
+<%= link_to 'Logar Atendente', attendants_backoffice_welcome_index_path%>
+</p>
 
 <% if admin_signed_in? %>
     <p>Admin Logado </p>
 <% else %>
     <p>Admin não logado</p>
 <% end %>
+</div>

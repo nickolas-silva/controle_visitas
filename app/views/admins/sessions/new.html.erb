@@ -1,14 +1,12 @@
-<h2>Log in</h2>
+<div class="container login-main">
+<h1>Login - Administradores</h1>
 
-<% flash.each do |key, value| %>
- <div class="flash <%= key %>"><%= value %></div>
-<% end %>
-
+<div class="itens">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
+  <p>
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+  </p>
 
   <div class="field">
     <%= f.label :password %><br />
@@ -26,5 +24,7 @@
     <%= f.submit "Log in" %>
   </div>
 <% end %>
+</div>
 
-<%= render "admins/shared/links" %>
+<%= render "devise/shared/links" %>
+</div>

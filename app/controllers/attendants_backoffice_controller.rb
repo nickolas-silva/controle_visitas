@@ -1,4 +1,4 @@
 class AttendantsBackofficeController < ApplicationController
   before_action :authenticate_attendant!
-  layout 'attendats_backoffice'
+  layout 'attendants_backoffice'
 end

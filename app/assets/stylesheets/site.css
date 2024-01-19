@@ -1,0 +1,28 @@
+#site{
+    text-align: center;
+    background-color: #FFFAFA;
+    border-radius: 20px;
+    margin-left: 300px;
+    margin-right: 300px;
+    align-items: center;
+    margin-top: 200px;
+    padding: 30px;
+}
+
+#site h1{
+    color: #00BFFF;
+}
+
+#site p a{
+    background-color: #00BFFF;
+    color: #fff;
+    padding: 15px;
+    border-radius: 15px;
+    font-weight: 800;
+    text-decoration: none;
+    
+}
+
+#site p{
+    margin: 40px;
+}
