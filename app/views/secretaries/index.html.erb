@@ -1,14 +1,16 @@
 <p style="color: green"><%= notice %></p>
+<div id="list-obj">
 
-<h1>Secretaries</h1>
-
-<div id="secretaries">
+<h1>Secretarias</h1>
+<%= link_to "Adicionar Secretaria", new_secretary_path %>
+<div id="body-list">
   <% @secretaries.each do |secretary| %>
-    <%= render secretary %>
+    
     <p>
-      <%= link_to "Show this secretary", secretary %>
+      <%= link_to secretary.name, secretary %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New secretary", new_secretary_path %>
+
+</div>

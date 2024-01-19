@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :unities
   resources :secretaries
   namespace :site do
     get 'welcome/index'

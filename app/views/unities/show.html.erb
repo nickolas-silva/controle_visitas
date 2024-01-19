@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @unity %>
+
+<div>
+  <%= link_to "Edit this unity", edit_unity_path(@unity) %> |
+  <%= link_to "Back to unities", unities_path %>
+
+  <%= button_to "Destroy this unity", @unity, method: :delete %>
+</div>

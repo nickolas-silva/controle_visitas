@@ -9,6 +9,8 @@ class SecretariesController < ApplicationController
 
   # GET /secretaries/1 or /secretaries/1.json
   def show
+    @secretary = Secretary.find(params[:id])
+    @unities = @secretary.unities
   end
 
   # GET /secretaries/new

@@ -142,3 +142,24 @@ html{
    margin-bottom: 20px;
    color: #20B2AA;
 }
+
+#btn-destroy button {
+   border: none;
+   color: red;
+   background-color: #fff;
+   border-radius: 20px;
+   padding: 8px;
+   font-weight: 800;
+   margin-top: 20px;
+}
+
+#btns-sec a {
+   color: #fff;
+   padding: 8px;
+   background-color: #20B2AA;
+   border-radius: 15px;
+   margin-top: 20px;
+   display: inline;
+   font-weight: 700;
+
+}

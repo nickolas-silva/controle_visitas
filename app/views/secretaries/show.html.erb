@@ -1,10 +1,21 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @secretary %>
+<div id="list-obj">
+<h1>Unidades</h1>
+<%= link_to "Adicionar unidade", new_unity_path %>
 
-<div>
-  <%= link_to "Edit this secretary", edit_secretary_path(@secretary) %> |
-  <%= link_to "Back to secretaries", secretaries_path %>
+<div id="body-list">
+  <% @unities.each do |unidade| %>
+    <p><%= link_to unidade.name, unidade %></p>
+  <% end %>
+</div>
 
-  <%= button_to "Destroy this secretary", @secretary, method: :delete %>
+  <div id="btns-sec">
+  <%= link_to "Editar secretaria", edit_secretary_path(@secretary) %> |
+  <%= link_to "Voltar para secretarias", secretaries_path %>
+  </div>
+
+  <div id="btn-destroy">
+  <%= button_to "Excluir secretaria", @secretary, method: :delete %>
+  </div>
 </div>
