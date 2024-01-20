@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_19_202919) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_20_173546) do
   create_table "admins", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -59,6 +59,16 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_19_202919) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["secretary_id"], name: "index_unities_on_secretary_id"
+  end
+
+  create_table "visitors", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.string "cpf"
+    t.string "rg"
+    t.string "phone"
+    t.string "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "unities", "secretaries"

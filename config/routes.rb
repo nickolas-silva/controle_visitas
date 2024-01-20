@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :visitors
   resources :unities
   resources :secretaries
   namespace :site do
