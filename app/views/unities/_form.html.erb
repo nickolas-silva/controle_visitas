@@ -16,10 +16,15 @@
     <%= form.text_field :name %>
   </div>
 
-  <div>
-    <%= form.label :secretary_id, style: "display: block" %>
-    <%= form.text_field :secretary_id %>
+  <div class="field">
+    <p>
+    <%= form.label :secretary_id %>
+
+    </p>
+    <%= form.collection_select :secretary_id, Secretary.all, :id, :name, prompt: "Selecione uma Secretaria" %>
   </div>
+
+  
 
   <div>
     <%= form.submit %>
