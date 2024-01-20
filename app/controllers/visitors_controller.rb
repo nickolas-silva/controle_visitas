@@ -1,5 +1,5 @@
 class VisitorsController < ApplicationController
-  layout 'admins_backoffice'
+  layout 'attendants_backoffice'
   before_action :set_visitor, only: %i[ show edit update destroy ]
 
   # GET /visitors or /visitors.json
