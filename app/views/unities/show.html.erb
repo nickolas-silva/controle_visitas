@@ -1,10 +1,23 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @unity %>
 
-<div>
+<div id="list-obj">
+  
+  <%= render @unity %>
+
+  <div id="body-list">
+
+
+  </div>
+
+
+  <div id="btns-sec">
   <%= link_to "Edit this unity", edit_unity_path(@unity) %> |
   <%= link_to "Back to unities", unities_path %>
+  </div>
+  <div id="btn-destroy">
+    <%= button_to "Destroy this unity", @unity, method: :delete %>
 
-  <%= button_to "Destroy this unity", @unity, method: :delete %>
+  </div>
+
 </div>
