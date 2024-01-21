@@ -12,28 +12,37 @@
   <% end %>
 
   <div>
-    <%= form.label :date, style: "display: block" %>
+    <%= form.label :data, style: "display: block" %>
     <%= form.datetime_field :date %>
   </div>
 
+  <% unless current_employee %>
   <div>
     <p>
-    <%= form.label :employee_id %>
+    <%= form.label :Funcionário %>
 
     </p>
     <%= form.collection_select :employee_id, @employees, :id, :name, prompt: "Selecione um Funcionário" %>
   </div>
+  <% end %>
 
   <div>
     <p>
-    <%= form.label :visitor_id %>
+    <%= form.label :visitante %>
 
     </p>
     <%= form.collection_select :visitor_id, Visitor.all, :id, :name, prompt: "Selecione um Visitante" %>
   </div>
 
+   <% if current_employee.present? && current_employee == @visit.employee %>
+    <div class="field">
+      <%= form.label :concluida %>
+      <%= form.check_box :status %>
+    </div>
+  <% end %>
 
-  <div>
-    <%= form.submit %>
+
+  <div class="actions">
+    <%= form.submit "Cadastrar Visita"%>
   </div>
 <% end %>

@@ -9,3 +9,16 @@
   <%= submit_tag 'Logout' %>
 <% end %>
 </div>
+
+<div id="list-obj">
+
+  <div id="body-list">
+<% @vitts.each do |visit| %>
+  <p>Visita a 
+      <%= link_to visit.employee.unity.name, visit %> 
+      | Visitante: <%= visit.visitor.name%> | Funcionário: <%= visit.employee.name%>
+      | <%= visit.date%>
+    </p>
+<% end %>
+</div>
+</div>
