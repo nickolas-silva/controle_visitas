@@ -1,5 +1,11 @@
 <h1>Bem Vindo Funcionário</h1>
 
+<div id="edit-obj">
+<%= link_to 'Editar perfil', edit_employee_registration_path%>
+</div>
+
+<div id="logout-btn">
 <%= form_tag destroy_employee_session_path, method: :delete do %>
   <%= submit_tag 'Logout' %>
 <% end %>
+</div>

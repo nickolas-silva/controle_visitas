@@ -118,7 +118,7 @@ html{
 }
 
 .login-main input[type="submit"] {
-   width: 80%;
+   width: 83%;
    cursor: pointer;
    background: rgb(61, 157, 179);
    padding: 8px 5px;
@@ -230,4 +230,54 @@ html{
    color: #fff;
    font-weight: 800;
    border-radius: 15px;
+   border: none;
+   margin-bottom: 10px;
+}
+
+#forgot{
+   text-align: right;
+   margin-right: 200px;
+}
+
+#forgot a{
+   background-color: #20B2AA;
+   color: #fff;
+   padding: 8px;
+   border-radius: 15px;
+   font-weight: 800;
+}
+
+#edit-obj{
+   display: inline-block;
+}
+
+#edit-obj a{
+   background-color: #066a75;
+   color: #fff;
+   padding: 8px;
+   border-radius: 15px;
+   font-weight: 800;
+}
+
+#logout-btn{
+   display: inline-block;
+}
+
+#logout-btn input[type="submit"]{
+   background-color: #d9534f;
+     
+      color: #fff;
+    
+      padding: 8px;
+      
+      border: none;
+     
+      border-radius: 15px;
+    
+      cursor: pointer;
+      font-weight: 800;
+     
+      transition: background-color 0.3s ease;
+      display: inline;
+      margin-top: 10px;
 }

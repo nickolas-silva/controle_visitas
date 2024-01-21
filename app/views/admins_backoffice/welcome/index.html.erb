@@ -1,5 +1,12 @@
 <h1>Bem Vindo Administrador</h1>
 
+<div id="edit-obj">
+<%= link_to 'Editar perfil', edit_admin_registration_path%>
+</div>
+
+<div id="logout-btn">
 <%= form_tag destroy_admin_session_path, method: :delete do %>
   <%= submit_tag 'Logout' %>
 <% end %>
+</div>
+

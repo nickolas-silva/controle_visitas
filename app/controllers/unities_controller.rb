@@ -9,6 +9,9 @@ class UnitiesController < ApplicationController
 
   # GET /unities/1 or /unities/1.json
   def show
+    @unity = Unity.find(params[:id])
+    @employees = @unity.employees
+    @attendants = @unity.attendants
   end
 
   # GET /unities/new

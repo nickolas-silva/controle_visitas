@@ -1,9 +1,15 @@
-<h1>Bem Vindo Atendente</h1>
+<h1>Bem Vindo <%= current_attendant.name%></h1>
 
-  <p>Unidade do Atendente: <%= current_attendant.unity.name %></p>
-
-  <p>Atendente não associado a uma unidade.</p>
-
+<div id="edit-obj">
+<%= link_to 'Editar perfil', edit_attendant_registration_path%>
+</div>
+<div id="logout-btn">
 <%= form_tag destroy_attendant_session_path, method: :delete do %>
   <%= submit_tag 'Logout' %>
 <% end %>
+</div>
+
+  <h3>Unidade do Atendente: <%= current_attendant.unity.name %></h3>
+
+
+

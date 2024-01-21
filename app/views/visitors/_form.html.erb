@@ -1,3 +1,6 @@
+
+
+
 <%= form_with(model: visitor) do |form| %>
   <% if visitor.errors.any? %>
     <div style="color: red">
@@ -31,12 +34,12 @@
     <%= form.text_field :phone %>
   </div>
 
-  <div class="field">
+  <div>
     <%= form.label :foto %>
     <%= form.file_field :photo %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="actions">
+    <%= form.submit "Cadastrar"%>
   </div>
 <% end %>
