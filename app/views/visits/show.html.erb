@@ -1,10 +1,16 @@
 <p style="color: green"><%= notice %></p>
 
+<div id="list-obj">
+
+
 <%= render @visit %>
 
-<div>
-  <%= link_to "Edit this visit", edit_visit_path(@visit) %> |
-  <%= link_to "Back to visits", visits_path %>
+<div id="btns-sec">
+  <%= link_to "Editar visita", edit_visit_path(@visit) %> |
+  <%= link_to "Voltar para visitas", visits_path %>
 
-  <%= button_to "Destroy this visit", @visit, method: :delete %>
+</div>
+<div id="btn-destroy">
+  <%= button_to "Excluir visita", @visit, method: :delete %>
+</div>
 </div>
