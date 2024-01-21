@@ -1,5 +1,9 @@
 <h1>Bem Vindo Atendente</h1>
 
+  <p>Unidade do Atendente: <%= current_attendant.unity.name %></p>
+
+  <p>Atendente não associado a uma unidade.</p>
+
 <%= form_tag destroy_attendant_session_path, method: :delete do %>
   <%= submit_tag 'Logout' %>
 <% end %>

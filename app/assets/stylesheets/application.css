@@ -177,4 +177,57 @@ html{
 
 }
 
+#form-all{
+   padding-left: 100px;
+   background-color: #20B2AA;
+   border-radius: 20px;
+   margin-left: 150px;
+   margin-right: 150px;
 
+}
+
+#form-all h2{
+   padding-top: 20px;
+   text-align: center;
+   font-weight: 800;
+   color: #fff;
+}
+
+#form-all .field{
+   margin-bottom: 10px;
+   color: #fff;
+   font-weight: 800;
+}
+
+#form-all input{
+   margin-top: 8px;
+   width: 300px;
+   padding: 10px;
+   border: 1px solid #066a75;
+   border-radius: 5px;
+   font-size: 16px;
+   outline: none;
+}
+
+#form-all .actions input{
+   background-color: #066a75;
+   color: #fff;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+   margin-bottom: 20px;
+}
+
+#form-all a{
+   background-color: #fff;
+   border-radius: 15px;
+   padding: 8px;
+   margin-top: 20px;
+}
+
+#form-all .actions button{
+   background-color: red;
+   padding: 8px;
+   color: #fff;
+   font-weight: 800;
+   border-radius: 15px;
+}
