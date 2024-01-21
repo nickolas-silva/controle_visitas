@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_20_195311) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_21_133726) do
   create_table "admins", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -81,7 +81,19 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_20_195311) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "visits", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.datetime "date"
+    t.bigint "visitor_id", null: false
+    t.bigint "employee_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["employee_id"], name: "index_visits_on_employee_id"
+    t.index ["visitor_id"], name: "index_visits_on_visitor_id"
+  end
+
   add_foreign_key "attendants", "unities"
   add_foreign_key "employees", "unities"
   add_foreign_key "unities", "secretaries"
+  add_foreign_key "visits", "employees"
+  add_foreign_key "visits", "visitors"
 end
