@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+<div id="list-obj">
+
+
+<h1>Unidades</h1>
+<%= link_to "Cadastrar Unidade", new_unity_path %>
+<div id="body-list">
+  <% @unities.each do |unity| %>
+    
+    <p>
+      <%= link_to unity.name, unity %>
+    </p>
+  <% end %>
+</div>
+</div>
+

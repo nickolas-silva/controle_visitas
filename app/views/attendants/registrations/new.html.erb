@@ -1,7 +1,19 @@
-<h2>Sign up</h2>
+<div id="form-all">
+
+<h2>Cadastrar Atendente</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "attendants/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :nome, style: "display: block" %>
+    <%= f.text_field :name %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :cpf %><br />
+    <%= f.text_field :cpf %>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />
@@ -9,21 +21,28 @@
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :senha %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(<%= @minimum_password_length %> caracteres no mínimo)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :confirmar_senha %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+  <div class="field">
+    <p>
+    <%= f.label :unidade %>
+    </p>
+    <%= f.collection_select :unity_id, Unity.all, :id, :name, prompt: "Selecione uma Unidade" %>
+  </div>
+
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Cadastrar" %>
   </div>
 <% end %>
 
-<%= render "attendants/shared/links" %>
+</div>

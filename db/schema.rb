@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_18_193037) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_21_163457) do
   create_table "admins", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -31,8 +31,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_18_193037) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "cpf"
+    t.bigint "unity_id", null: false
     t.index ["email"], name: "index_attendants_on_email", unique: true
     t.index ["reset_password_token"], name: "index_attendants_on_reset_password_token", unique: true
+    t.index ["unity_id"], name: "index_attendants_on_unity_id"
   end
 
   create_table "employees", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -43,8 +47,54 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_18_193037) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "cpf"
+    t.string "rg"
+    t.string "cargo"
+    t.bigint "unity_id", null: false
     t.index ["email"], name: "index_employees_on_email", unique: true
     t.index ["reset_password_token"], name: "index_employees_on_reset_password_token", unique: true
+    t.index ["unity_id"], name: "index_employees_on_unity_id"
   end
 
+  create_table "secretaries", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "unities", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.bigint "secretary_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["secretary_id"], name: "index_unities_on_secretary_id"
+  end
+
+  create_table "visitors", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.string "cpf"
+    t.string "rg"
+    t.string "phone"
+    t.string "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "visits", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.datetime "date"
+    t.bigint "visitor_id", null: false
+    t.bigint "employee_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "status"
+    t.index ["employee_id"], name: "index_visits_on_employee_id"
+    t.index ["visitor_id"], name: "index_visits_on_visitor_id"
+  end
+
+  add_foreign_key "attendants", "unities"
+  add_foreign_key "employees", "unities"
+  add_foreign_key "unities", "secretaries"
+  add_foreign_key "visits", "employees"
+  add_foreign_key "visits", "visitors"
 end

@@ -1,5 +1,5 @@
 <div class="container login-main">
-<h1>Login - Administradores</h1>
+<h1>Login</h1>
 
 <div class="itens">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -26,5 +26,8 @@
 <% end %>
 </div>
 
-<%= render "devise/shared/links" %>
+<div id="forgot">
+<%= link_to "Esqueceu a senha?", new_password_path(resource_name) %><br />
+
+</div>
 </div>

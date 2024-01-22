@@ -1,7 +1,15 @@
-<h1>AttendantsBackoffice::Welcome#index</h1>
-<p>Find me in app/views/attendants_backoffice/welcome/index.html.erb</p>
+<h1>Bem Vindo <%= current_attendant.name%></h1>
 
-
+<div id="edit-obj">
+<%= link_to 'Editar perfil', edit_attendant_registration_path%>
+</div>
+<div id="logout-btn">
 <%= form_tag destroy_attendant_session_path, method: :delete do %>
   <%= submit_tag 'Logout' %>
 <% end %>
+</div>
+
+  <h3>Unidade do Atendente: <%= current_attendant.unity.name %></h3>
+
+
+

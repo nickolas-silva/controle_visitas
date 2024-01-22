@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<div id="list-obj">
+
+
+<h1>Visitantes</h1>
+<%= link_to "Cadastrar Visitante", new_visitor_path %>
+<div id="body-list">
+  <% @visitors.each do |visitor| %>
+    
+    <p>
+      <%= link_to visitor.name, visitor %>
+    </p>
+  <% end %>
+</div>
+
+
+</div>

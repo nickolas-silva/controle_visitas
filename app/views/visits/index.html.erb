@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+<div id="list-obj">
+<h1>Visitas</h1>
+<%= link_to "Cadastrar Visita", new_visit_path %>
+<div id="body-list">
+  <% @visits.each do |visit| %>
+
+    <p>Visita a 
+      <%= link_to visit.employee.unity.name, visit %> 
+      | Visitante: <%= visit.visitor.name%> | Funcionário: <%= visit.employee.name%>
+    </p>
+  <% end %>
+</div>
+
+
+</div>
